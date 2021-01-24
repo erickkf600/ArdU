@@ -1,0 +1,87 @@
+body, html, *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font1;
+}
+
+button{
+  cursor: pointer;
+  border: none;
+  &:focus{
+    outline: none;
+    box-shadow: none;
+    border: none;
+  }
+}
+//CONTAINER 
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  @include respond-to('device'){
+      max-width: 540px;
+  }
+  @include respond-to('small'){
+      max-width: 720px;
+  }
+  @include respond-to('medium'){
+      max-width: 960px;
+  }
+  @include respond-to('large'){
+      max-width: 1140px;
+  }
+  @include respond-to('extra-large'){
+      max-width: 1300px;
+  }
+}
+.grid-wrapper{
+  display: grid;
+  grid-template-areas: "main main";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  @include respond-to('medium'){
+    grid-template-columns: 90px 1fr;
+    grid-template-rows: 80px 1fr;
+    grid-template-areas: "sidemenu main";
+  }
+
+}
+header{
+  grid-area: toolbar;
+}
+.side-menu{
+  grid-area: sidemenu; 
+}
+.content{
+  grid-area: main; 
+  // margin-top: 5rem;
+}
+button{
+    border: none;
+    &:focus{
+        outline: none;
+        border: none;
+        box-shadow: none;
+    }
+}
+p{
+  margin: 0;
+  padding: 0;
+  font-family: $font1;  
+}
+
+//FORMS
+input, select{
+    height: 45px;
+    @include border-radius(5px);
+    border: solid 1px #ccc;
+    padding: 0 10px;
+    &:focus{
+        border: none;  
+        box-shadow: none;
+        outline: none;
+    }
+}    

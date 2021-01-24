@@ -1,0 +1,35 @@
+.profile{
+    margin-top: 4rem;
+    &__card{
+        position: relative;
+        width: 95%;
+        background: $clear;
+        height: 400px;
+        margin: 7rem auto;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        @include border-radius(8px);
+        @include box-shadow(0, 2px, 7px, 0, rgba(0,0,0,0.13));
+        @include respond-to('medium'){
+            height: 270px;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        &-img{
+            width: 130px;
+            object-fit: contain;
+            @include border-radius(100%);
+            @include box-shadow(0, 2px, 7px, 0, rgba(0,0,0,0.13));
+            position: absolute;
+            top: -65px;
+            left: auto;
+            @include respond-to('medium'){
+                left: 30px;
+                top: auto;
+                width: 190px;
+            }
+        }
+    }
+}

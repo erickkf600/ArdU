@@ -1,0 +1,93 @@
+.toolbar{
+    padding: 20px 30px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    &__mobile-menu{
+        background: #B6B4CB;
+        @include border-radius(100%);
+        color: #fff;
+        min-width: 60px;
+        height: 60px;
+        font-size: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px 0 -31px;
+        @include respond-to('medium'){
+            display: none;
+        }
+    }
+
+    &__search{
+        color: #fff;
+        background: rgba($color: $purple-dark, $alpha: .2);
+        width: 92%;
+        height: 45px;
+        @include border-radius(30px);
+        @include box-shadow(10px, 11px, 25px, -7px, rgba(107,56,152,.2));
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        padding: 0 10px;
+        @include placeholder{
+            color: #fff;
+            font: {
+                family: $font1;
+                size: 13px;
+            }
+        }
+        @include respond-to('medium'){
+            width: 18vw;
+            height: 40px;
+        }
+        &-input{
+            background: transparent;
+            border: none;
+            color: #fff;
+            width: 100%;
+            margin-top: 3px;
+        }
+        &-icon{
+            font-size: 22px;
+        }
+    }
+
+    &__user{
+        display: inline-flex;
+        align-items: center;
+        position: absolute;
+        right: 10px;
+        @include respond-to('medium'){
+            position: relative;
+        }
+        &-favorites{
+            background: transparent;
+            font-size: 20px;
+            color: $purple-medium2;
+            margin: 8px 20px 0 0;
+            @include respond-to('medium'){
+                margin: 8px 30px 0 0;
+                font-size: 25px;
+            }
+        }
+        &-button{
+            width: 40px;
+            height: 40px;
+            @include border-radius(100%);
+            @include box-shadow(10px, 12px, 25px, -6px, rgba(107,56,152,.5));
+            @include respond-to('medium'){
+                width: 50px;
+                height: 50px;
+            }
+            &-img{
+                width: 100%;
+                object-fit: cover;
+                @include border-radius(100%);
+            }
+        }
+    }
+}

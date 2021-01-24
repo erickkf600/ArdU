@@ -1,0 +1,48 @@
+.side-menu{
+    background: $sidemenu-default;
+    height: 100vh;
+    z-index: 3;
+    display: none;
+    @include respond-to('medium'){
+        display: block
+    }
+    
+    &__toggle{
+        font-size: 40px;
+        width: 100%;
+        margin-top: 15px;
+        background: transparent;
+        color: rgba($color: #fff, $alpha: .7);
+    }
+    &__ul{
+        overflow: hidden;
+        text-align: center;
+        list-style: none;
+        margin-top: 25px;
+        color: rgba($color: #fff, $alpha: .55);
+        
+        &-li{
+            cursor: pointer;
+            font-size: 30px;
+            margin: 40px auto;
+            @include transition(.3s);
+            @include border-radius(100%);
+            background: transparent;
+            width: 62px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:first-child{
+                margin-top: 0
+            }
+            &:last-child{
+                margin-bottom: 0;
+            }
+
+            &:hover, &--active{
+                background: $purple-dark;
+            }
+        }
+    }
+}
