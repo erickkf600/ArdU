@@ -1,0 +1,4 @@
+export const Variables = {
+    TOGGLE_LOCATIONS: 'TOGGLE_LOCATIONS',
+    SET_LOCATION: 'SET_LOCATION'
+}
