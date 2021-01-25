@@ -3,7 +3,7 @@ import theme from "styled-theming";
 
 
 export const backgroundColor = theme("theme", {
-    default: "#DADAEA",
+    default: "#e1dbea",
     dark: "linear-gradient(#1e1e2f, #1e1e24)",
 });
 

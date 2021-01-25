@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?oc2k34');
-  src:  url('fonts/icomoon.eot?oc2k34#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?oc2k34') format('truetype'),
-    url('fonts/icomoon.woff?oc2k34') format('woff'),
-    url('fonts/icomoon.svg?oc2k34#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?edgslm');
+  src:  url('fonts/icomoon.eot?edgslm#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?edgslm') format('truetype'),
+    url('fonts/icomoon.woff?edgslm') format('woff'),
+    url('fonts/icomoon.svg?edgslm#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -36,6 +36,9 @@
 }
 .icon-shopping-cart:before {
   content: "\e908";
+}
+.icon-arrow-thin-right:before {
+  content: "\e90a";
 }
 .icon-hotel:before {
   content: "\e902";
