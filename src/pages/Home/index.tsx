@@ -6,8 +6,11 @@ import Map from './map'
 import { HomeInterface } from '../../interfaces/home'
 import { useScrollBoost } from 'react-scrollbooster'
 
+
 function Home({dispatch, toggle, location}: HomeInterface) {
 
+
+    
     //SCROLL WITH MOUSE DRAG
     const [viewport] = useScrollBoost({
         direction: 'vertical',
@@ -17,9 +20,12 @@ function Home({dispatch, toggle, location}: HomeInterface) {
     useEffect(() => {
         dispatch(actions.location())
       }, []);
+    const serachValue = (value: any) =>{
+        // setValue(value)
+    }  
     return (
         <div className="home">
-            <Toolbar />
+            <Toolbar search={serachValue} location={location}/>
             <Map location={location}/>
                 <div className={`home__locations ${toggle.opened ? 'home__locations--hide': ''}`}>
                     <div  className="home__locations-head">
@@ -28,7 +34,7 @@ function Home({dispatch, toggle, location}: HomeInterface) {
                     </div>
     
                     <div className="home__locations-scroll" ref={viewport}>
-                        <div className="home__locations-card"></div>
+                        <div className="home__locations-card" onClick={() => dispatch(actions.setPlace())}></div>
                         <div className="home__locations-card"></div>
                         <div className="home__locations-card"></div>
                         <div className="home__locations-card"></div>

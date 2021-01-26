@@ -54,19 +54,22 @@ export default [
       "featureType": "poi",
       "elementType": "all",
       "stylers": [
-          {
-              "saturation": -78
-          },
-          {
-              "hue": "#6600ff"
-          },
-          {
-              "lightness": -47
-          },
-          {
-              "visibility": "off"
-          }
-      ]
+        {
+            "visibility": "on"
+        },
+        {
+            "saturation": 10
+        },
+        {
+            "hue": "#6600ff"
+        },
+        {
+            "lightness": "0"
+        },
+        {
+            "weight": "0.5"
+        }
+    ]
   },
   {
       "featureType": "road",
