@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?edgslm');
-  src:  url('fonts/icomoon.eot?edgslm#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?edgslm') format('truetype'),
-    url('fonts/icomoon.woff?edgslm') format('woff'),
-    url('fonts/icomoon.svg?edgslm#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?ilpt7o');
+  src:  url('fonts/icomoon.eot?ilpt7o#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?ilpt7o') format('truetype'),
+    url('fonts/icomoon.woff?ilpt7o') format('woff'),
+    url('fonts/icomoon.svg?ilpt7o#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -40,17 +40,20 @@
 .icon-arrow-thin-right:before {
   content: "\e90a";
 }
-.icon-hotel:before {
-  content: "\e902";
-}
-.icon-hospital:before {
+.icon-pharmacy:before {
   content: "\e900";
 }
-.icon-gasoline:before {
-  content: "\e905";
+.icon-hospital:before {
+  content: "\e902";
 }
 .icon-restaurant:before {
   content: "\e906";
+}
+.icon-hotel:before {
+  content: "\e90b";
+}
+.icon-gasoline:before {
+  content: "\e905";
 }
 .icon-menu-desktop:before {
   content: "\e903";
