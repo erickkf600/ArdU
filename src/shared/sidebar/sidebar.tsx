@@ -2,6 +2,7 @@ import React from 'react'
 import { menuItems } from './menu-items'
 import * as actions from './sidebar.action'
 function Sidebar() {
+
     return(
         <div className="side-menu">
         <button  className="side-menu__toggle" onClick={() => actions.toggleMenu()}><i className="icon-menu-desktop"></i></button>

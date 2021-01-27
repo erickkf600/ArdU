@@ -1,6 +1,7 @@
 // UTILS
 @import "./utils/mixins";
 @import "./utils/variables";
+@import "./utils/swal";
 @import "./layout/structure";
 
 
@@ -12,3 +13,4 @@
 //PAGES
 @import "./pages/home";
 @import "./pages/profile";
+@import "./pages/login";

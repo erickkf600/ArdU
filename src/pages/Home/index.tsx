@@ -6,7 +6,6 @@ import Map from './map'
 import { HomeInterface } from '../../interfaces/home'
 import { useScrollBoost } from 'react-scrollbooster'
 
-
 function Home({dispatch, toggle, location}: HomeInterface) {
 
 

@@ -48,7 +48,13 @@ button{
     grid-template-areas: "sidemenu main";
   }
 
+  &--is-login{
+    @include respond-to('medium'){
+      grid-template-areas: "main";
+    }
+  }
 }
+
 header{
   grid-area: toolbar;
 }

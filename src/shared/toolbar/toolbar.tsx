@@ -7,7 +7,9 @@ import usePlacesAutocomplete, {
   } from "use-places-autocomplete"
 import { PlacesInterface } from '../../interfaces/places'
 function Toolbar({search, location}: any) {
-
+    const user: any = localStorage.getItem('user')
+    const userData = JSON.parse(user)
+    
     const {
         ready,
         value,
@@ -21,7 +23,6 @@ function Toolbar({search, location}: any) {
         } as PlacesInterface
     })
 
-    console.log(data)
     return (
         <header className="toolbar">
             <div className="toolbar__search">
@@ -33,7 +34,7 @@ function Toolbar({search, location}: any) {
             <div className="toolbar__user">
                 <button className="toolbar__user-favorites toolbar__user-favorites"><i className="icon-heart"></i></button>
                 <Link className="toolbar__user-button" to="/perfil">
-                    <img src={placeholder} alt="user placeholder" title="ArdU user placeholder" className="toolbar__user-button-img"/>
+                    <img src={userData ? userData.avatar : placeholder} alt="user placeholder" title="ArdU user placeholder" className="toolbar__user-button-img"/>
                 </Link>
             </div>
         </header>
