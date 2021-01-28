@@ -1,11 +1,11 @@
 import { Variables } from "../../../App.variables"
 
-const locationsBool = {
+const toogle = {
     opened: false
   }
 
-export default function toggleLocationsCards(state = locationsBool, action: any) {
-    if(action.type === Variables.TOGGLE_LOCATIONS){
+export default function toggleMenu(state = toogle, action: any) {
+    if(action.type === Variables.TOGGLE_MENU){
         return {
             ...state,
             opened: !state.opened

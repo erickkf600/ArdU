@@ -2,9 +2,27 @@
     background: $sidemenu-default;
     height: 100vh;
     z-index: 3;
-    display: none;
+    width: 0;
+    z-index: 5;
+    @include transition(.3s);
+    position: relative;
+    overflow-y: auto;
     @include respond-to('medium'){
-        display: block
+        width: 90px;
+    }
+    &.open{
+        width: 250px;
+    }
+    .close{
+        font-size: 21px;
+        position: absolute;
+        right: 10px;
+    }
+    .desktop{
+        display: none;
+        @include respond-to('medium'){
+            display: block;
+        }
     }
     
     &__toggle{
@@ -15,34 +33,55 @@
         color: rgba($color: #fff, $alpha: .7);
     }
     &__ul{
-        overflow: hidden;
-        text-align: center;
         list-style: none;
-        margin-top: 25px;
+        margin-top: 5px;
+        padding: 0;
+        position: relative;
         color: rgba($color: #fff, $alpha: .55);
-        
+        @include transform(translateX(-100vw));
+        &.open{
+            margin-top: 75px;
+            @include transform(translateX(0));
+        }
+        @include respond-to('medium'){
+            margin-top: 25px;
+            overflow: hidden;
+            @include transform(translateX(0));
+        }
         &-li{
-            cursor: pointer;
-            font-size: 30px;
-            margin: 40px auto;
-            @include transition(.3s);
-            @include border-radius(100%);
-            background: transparent;
-            width: 62px;
-            height: 60px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            &:first-child{
-                margin-top: 0
-            }
-            &:last-child{
-                margin-bottom: 0;
-            }
-
-            &:hover, &--active{
+            padding: 12px 20px;
+            cursor: pointer;
+            margin: 40px auto;
+            @include transition(.3s);
+            font-size: 30px;
+            &:hover,
+            &.actived{
                 background: $purple-dark;
             }
+            i{
+                font-size: 30px;
+                margin-right: 15px;
+                margin-left: -6px;
+                @include respond-to('large'){
+                    margin-left: 7px
+                }
+            }
+            &-label{
+                
+                opacity: 0;
+                width: 0;
+                font-size: 13px;
+                font-weight: bold;
+                @include transition(.3s);
+                white-space: nowrap;
+                &.open{
+                    opacity: 1;
+                    width: 100%;
+                }
+            }
+    
         }
     }
 }

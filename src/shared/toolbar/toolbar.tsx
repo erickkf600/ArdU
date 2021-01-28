@@ -1,12 +1,15 @@
 import React from 'react'
 import placeholder from './../../assets/user-placeholder.png'
 import { Link } from "react-router-dom"
+import * as actions from './toobar.action'
+import { connect } from 'react-redux'
+
 import usePlacesAutocomplete, {
     getGeocode,
     getLatLng,
   } from "use-places-autocomplete"
 import { PlacesInterface } from '../../interfaces/places'
-function Toolbar({search, location}: any) {
+function Toolbar({dispatch, search, location}: any) {
     const user: any = localStorage.getItem('user')
     const userData = JSON.parse(user)
     
@@ -26,7 +29,7 @@ function Toolbar({search, location}: any) {
     return (
         <header className="toolbar">
             <div className="toolbar__search">
-                <button className="toolbar__mobile-menu"><i className="icon-menu-mobile"></i></button>
+                <button className="toolbar__mobile-menu"  onClick={() => dispatch(actions.toggleMenu())}><i className="icon-menu-mobile"></i></button>
                 <i className="icon-search toolbar__search-icon"></i>
                 <input type="text" placeholder="Pesquise por lugares..." className="toolbar__search-input"  onChange={event => setValue(event.target.value)}/>
             </div>
@@ -40,4 +43,4 @@ function Toolbar({search, location}: any) {
         </header>
     )
 }
-export default Toolbar
+export default connect()(Toolbar)
