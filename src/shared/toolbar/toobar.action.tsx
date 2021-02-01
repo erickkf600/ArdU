@@ -6,3 +6,6 @@ export const toggleMenu = () => {
         type: Variables.TOGGLE_MENU
       }
 };
+export const setPlace = (place: any) => {
+    console.log(place)
+};

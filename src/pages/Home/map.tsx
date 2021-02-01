@@ -20,7 +20,7 @@ function Map({location}: any) {
             <div className="home__map">
                 <GoogleMap
                     mapContainerStyle={actions.containerStyle}
-                    zoom={17}
+                    zoom={15}
                     center={location}
                     options={actions.options}
 
@@ -36,7 +36,7 @@ function Map({location}: any) {
                     ></Marker>
                     <Circle
                          center={{ lat: location.lat, lng: location.lng }}
-                         radius={300}
+                         radius={2000}
                          options= {{
                             strokeColor: "#CACAD9",
                             fillOpacity: 0

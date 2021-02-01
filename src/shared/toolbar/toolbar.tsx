@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import placeholder from './../../assets/user-placeholder.png'
 import { Link } from "react-router-dom"
 import * as actions from './toobar.action'
@@ -9,10 +9,13 @@ import usePlacesAutocomplete, {
     getLatLng,
   } from "use-places-autocomplete"
 import { PlacesInterface } from '../../interfaces/places'
-function Toolbar({dispatch, search, location}: any) {
+import ellipsis from '../Utils/ellipsis'
+function Toolbar({dispatch, location}: any) {
+  
     const user: any = localStorage.getItem('user')
     const userData = JSON.parse(user)
-    
+
+
     const {
         ready,
         value,
@@ -22,7 +25,7 @@ function Toolbar({dispatch, search, location}: any) {
     } = usePlacesAutocomplete({
         requestOptions: {
             location: { lat: () => location.lat, lng: () => location.lng },
-            radius: 300,
+            radius: 2000,
         } as PlacesInterface
     })
 
@@ -32,6 +35,19 @@ function Toolbar({dispatch, search, location}: any) {
                 <button className="toolbar__mobile-menu"  onClick={() => dispatch(actions.toggleMenu())}><i className="icon-menu-mobile"></i></button>
                 <i className="icon-search toolbar__search-icon"></i>
                 <input type="text" placeholder="Pesquise por lugares..." className="toolbar__search-input"  onChange={event => setValue(event.target.value)}/>
+
+                {
+                    status === 'OK' && data.length ?
+                    <div className="toolbar__search-suggestions">
+                        {data.map(({id, description}) =>{
+                            <button key={id} className="toolbar__search-suggestions-place" onClick={() => actions.setPlace(description)}>
+                                {ellipsis(description, 37)}
+                                <i className="icon-go"></i>
+                            </button>
+                        })}
+                    </div>
+                    : null
+                }
             </div>
 
             <div className="toolbar__user">
