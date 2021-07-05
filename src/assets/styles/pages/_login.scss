@@ -1,0 +1,95 @@
+.login{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: $sidemenu-default;
+
+    &__logo{
+        object-fit: contain;
+        width: 150px;
+    }
+
+    &__card{
+        width: 90%;
+        height: 450px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 30px;
+        margin: 0 auto;
+        @include border-radius(5px);
+        @include box-shadow(-1px, 4px, 19px, 1px, rgba(0,0,0,0.2));
+        @include respond-to('medium'){
+            width: 400px;
+        }
+        
+        &-welcome{
+            margin: 25px 0;
+            font: {
+                size: 15px;
+                family: $font1;
+                weight: 600;
+            }
+        }
+        &-form{width: 100%}
+        &-input-control{
+            width: 100%;
+            height: 50px;
+            background: #fff;
+            border: 1.5px solid $purple-medium2;
+            @include border-radius(5px);
+            &:nth-child(2){
+                margin: 30px auto;
+            }
+            input{
+                width: 100%;
+                border: none;
+            }
+            &-error-msg{
+                color: #f00;
+                font: {
+                    family: $font1;
+                    size: 11px;
+                }    
+            }
+            &--error{
+                border-color: #f00;
+                color: #f00;
+            }
+        }
+
+        &-login-button{
+            background: $sidemenu-default;
+            color: #fff;
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px 0;
+            text-transform: uppercase;
+            @include border-radius(5px);
+            font: {
+                size: 13px;
+                weight: 400;
+                family: $font1
+            }
+            &:hover{
+                background:  lighten(#6B3898, 10%);
+            }
+
+            &.outline{
+                background: transparent;
+                color: $purple-dark;
+                border: solid 1px $purple-dark;
+                &:hover{
+                    background:  darken(#fff, 10%);
+                }
+            }
+        }
+
+    }
+
+}

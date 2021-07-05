@@ -2,19 +2,22 @@
     margin-top: 4rem;
     &__card{
         position: relative;
-        width: 95%;
+        width: 90%;
         background: $clear;
         height: 400px;
         margin: 7rem auto;
         display: flex;
         align-items: flex-start;
         justify-content: center;
+        padding: 15px;
         @include border-radius(8px);
         @include box-shadow(0, 2px, 7px, 0, rgba(0,0,0,0.13));
         @include respond-to('medium'){
             height: 270px;
             align-items: center;
             justify-content: flex-start;
+            padding: 0 0 0 35px;
+            width: 65%;
         }
 
         &-img{
@@ -26,9 +29,106 @@
             top: -65px;
             left: auto;
             @include respond-to('medium'){
-                left: 30px;
+                position: relative;
+                left: auto;
                 top: auto;
                 width: 190px;
+            }
+        }
+
+        &-info{
+            margin-left: 25px;
+            font: {
+                size: 25px;
+                weight: bold;
+                family: $font1
+            }
+            &-email{
+                font-size: 15px;
+                color: $purple-medium2
+            }
+        }
+
+        &-actions{
+            display: grid;
+            grid-template-columns: 1fr;
+            height: 100%;
+            width: 150px;
+            margin: auto 0 auto auto;
+
+            &-button{
+                display: block;
+                background: $purple-clean;
+                @include border-radius(5px 0 0 5px);
+                @include transition(.5s);
+                color: $purple-medium2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: -10px;
+                &:hover{
+                    background:  darken(#DADAEA, 10%);
+                }
+                font: {
+                    size: 15px;
+                    weight: bold;
+                    family: $font1
+                }
+                i{
+                    font-size: 20px;
+                    margin-left: 10px;
+                }
+                &--logout{
+                    margin-top: 10px;
+                    border-top: solid 1px #ccc
+                }
+            }
+        }
+
+
+        &-edit{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: $clear;
+            @include border-radius(8px);
+            padding: 0 30px 15px 30px;
+
+            &-close{
+                font-size: 20px;
+                color: $purple-dark;
+                display: flex;
+                margin: 13px 0 auto auto;
+            }
+            &-row{
+                display: grid;
+                grid-template-columns: 1fr;
+                height: 70px;
+                align-items: center;
+                column-gap: 20px;
+                @include respond-to('medium'){
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+
+            &-button{
+                display: flex;
+                margin: auto;
+                background: $purple-medium2;
+                color: #fff;
+                text-align: center;
+                width: 100px;
+                justify-content: center;
+                padding: 7px 5px;
+                text-transform: uppercase;
+                @include transition(.5s);
+                @include border-radius(7px);
+                &:hover{
+                    background:  darken(#7B5E81, 10%);
+                }
             }
         }
     }

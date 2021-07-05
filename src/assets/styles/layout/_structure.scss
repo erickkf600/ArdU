@@ -39,16 +39,21 @@ button{
 }
 .grid-wrapper{
   display: grid;
-  grid-template-areas: "main main";
-  grid-template-columns: 1fr;
+  grid-template-areas: "sidemenu main";
+  grid-template-columns: 0 1fr;
   grid-template-rows: 1fr;
   @include respond-to('medium'){
     grid-template-columns: 90px 1fr;
     grid-template-rows: 80px 1fr;
-    grid-template-areas: "sidemenu main";
   }
 
+  &--is-login{
+    @include respond-to('medium'){
+      grid-template-areas: "main";
+    }
+  }
 }
+
 header{
   grid-area: toolbar;
 }
