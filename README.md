@@ -52,7 +52,7 @@ Aqui estão as libs que foram utilizadas neste projeto:
 * normalize.css
 * react-hook-form `<@hookform/resolvers & yup>`
 
-## Responsavel
+## Responsável
 
 <table>
   <tr>
