@@ -1,0 +1,15 @@
+.alert-swal{
+    .confirmBtn, .cancelBtn{
+        margin: 0 10px !important;
+        background: $sidemenu-default !important;
+        border: none !important;
+        &:focus{
+            outline: none;
+            box-shadow: none;
+            border: none
+        }
+    }
+    .cancelBtn{
+        background: $dark-text !important;
+    }
+}

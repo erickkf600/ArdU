@@ -1,7 +1,13 @@
+import { Variables } from "../../App.variables";
+import onClickOutside from "react-onclickoutside"
 
-
-export let opened = false
+//RETORNA OS DADOS DO REDUCE 
+export const mapStateToProps = (state: any) => ({
+    toggle: state.toggleMenu?.opened
+  })
 
 export const toggleMenu = () => {
-    opened = !opened
+    return {
+        type: Variables.TOGGLE_MENU
+      }
 };
